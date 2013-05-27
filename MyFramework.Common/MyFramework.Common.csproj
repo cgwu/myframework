@@ -40,13 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant\RspData.cs" />
+    <Compile Include="Message\Base\DataRangeReq.cs" />
+    <Compile Include="Message\Base\Message.cs" />
+    <Compile Include="Message\Base\MessageUtil.cs" />
+    <Compile Include="Message\Base\Page.cs" />
+    <Compile Include="Message\Base\PageReq.cs" />
+    <Compile Include="Message\Base\Req.cs" />
+    <Compile Include="Message\Base\Rsp.cs" />
     <Compile Include="NHibernate\Domain\Product.cs" />
     <Compile Include="NHibernate\Domain\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Message\Base\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Constant\_ReadMe.txt" />
     <Content Include="NHibernate\Domain\_ReadMe.txt" />
