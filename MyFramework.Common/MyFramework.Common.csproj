@@ -40,14 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NHibernate\Domain\Product.cs" />
+    <Compile Include="NHibernate\Domain\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
-    <Folder Include="Mapping\" />
     <Folder Include="Message\Base\" />
-    <Folder Include="Message\Game\" />
-    <Folder Include="Message\Report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Constant\_ReadMe.txt" />
+    <Content Include="NHibernate\Domain\_ReadMe.txt" />
+    <EmbeddedResource Include="NHibernate\Mapping\Product.hbm.xml" />
+    <Content Include="NHibernate\Mapping\_ReadMe.txt" />
+    <Content Include="Message\_ReadMe.txt" />
+    <EmbeddedResource Include="NHibernate\Mapping\User.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
