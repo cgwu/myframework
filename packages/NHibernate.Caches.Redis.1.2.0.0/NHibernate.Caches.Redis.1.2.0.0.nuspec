@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NHibernate.Caches.Redis</id>
+    <version>1.2.0.0</version>
+    <title>NHibernate.Caches.Redis</title>
+    <authors>Adrian Phinney</authors>
+    <owners>Adrian Phinney</owners>
+    <projectUrl>http://github.com/TheCloudlessSky/NHibernate.Caches.Redis</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An NHibernate caching provider for Redis.</description>
+    <releaseNotes />
+    <copyright>Copyright Harbour Inc. 2012</copyright>
+    <language />
+    <tags>redis caching nhibernate cache provider</tags>
+    <dependencies>
+      <dependency id="ServiceStack.Redis" version="3.0" />
+      <dependency id="NHibernate" version="3.3" />
+    </dependencies>
+    <references>
+      <reference file="NHibernate.Caches.Redis.dll" />
+    </references>
+  </metadata>
+</package>
