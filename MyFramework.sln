@@ -1,7 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFramework.Web", "MyFramework.Web\MyFramework.Web.csproj", "{64ADD597-1636-4EF9-894F-D36C8075BF54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFramework.Service", "MyFramework.Service\MyFramework.Service.csproj", "{E4EE51D4-4627-48C9-892E-6CA7DBA9EF17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFramework.Common", "MyFramework.Common\MyFramework.Common.csproj", "{B9E8CCED-FF59-4961-860F-055979B3C774}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64ADD597-1636-4EF9-894F-D36C8075BF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64ADD597-1636-4EF9-894F-D36C8075BF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64ADD597-1636-4EF9-894F-D36C8075BF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64ADD597-1636-4EF9-894F-D36C8075BF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4EE51D4-4627-48C9-892E-6CA7DBA9EF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4EE51D4-4627-48C9-892E-6CA7DBA9EF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4EE51D4-4627-48C9-892E-6CA7DBA9EF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4EE51D4-4627-48C9-892E-6CA7DBA9EF17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E8CCED-FF59-4961-860F-055979B3C774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E8CCED-FF59-4961-860F-055979B3C774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E8CCED-FF59-4961-860F-055979B3C774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E8CCED-FF59-4961-860F-055979B3C774}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
