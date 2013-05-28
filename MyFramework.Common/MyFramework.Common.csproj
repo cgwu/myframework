@@ -43,7 +43,7 @@
     <Compile Include="Abstract\ISession.cs" />
     <Compile Include="Constant\RspData.cs" />
     <Compile Include="Constant\SysConstant.cs" />
-    <Compile Include="Message\Base\DataRangeReq.cs" />
+    <Compile Include="Message\Base\DateRangeReq.cs" />
     <Compile Include="Message\Base\Message.cs" />
     <Compile Include="Message\Util\DateUtil.cs" />
     <Compile Include="Message\Util\MessageUtil.cs" />
