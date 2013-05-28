@@ -28,7 +28,7 @@ namespace MyFramework.Common.Message.Util
             }
         }
 
-        public const string StandardDateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
+        public const string StandardDateTimeFormat = "yyyy-MM-dd HH:mm:ss";
         public const string StandardDateFormat = "yyyy-MM-dd";
 
         /// <summary>
