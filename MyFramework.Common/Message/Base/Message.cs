@@ -10,7 +10,7 @@ namespace MyFramework.Common.Message.Base
         /// <summary>
         /// 序列号
         /// </summary>
-        public string serialNo { get; set; }
+        public string SerialNo { get; set; }
 
         public override string ToString()
         {

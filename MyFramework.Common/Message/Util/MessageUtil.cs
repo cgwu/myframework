@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MyFramework.Common.Constant;
+using MyFramework.Common.Message.Base;
 
-namespace MyFramework.Common.Message.Base
+namespace MyFramework.Common.Message.Util
 {
     public class MessageUtil
     {

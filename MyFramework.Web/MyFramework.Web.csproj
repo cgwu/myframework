@@ -111,6 +111,9 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Base\BasePage.cs" />
+    <Compile Include="Base\MessageFactory.cs" />
+    <Compile Include="Base\SessionWeb.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

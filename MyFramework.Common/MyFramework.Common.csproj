@@ -40,10 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ISession.cs" />
     <Compile Include="Constant\RspData.cs" />
+    <Compile Include="Constant\SysConstant.cs" />
     <Compile Include="Message\Base\DataRangeReq.cs" />
     <Compile Include="Message\Base\Message.cs" />
-    <Compile Include="Message\Base\MessageUtil.cs" />
+    <Compile Include="Message\Util\DateUtil.cs" />
+    <Compile Include="Message\Util\MessageUtil.cs" />
     <Compile Include="Message\Base\Page.cs" />
     <Compile Include="Message\Base\PageReq.cs" />
     <Compile Include="Message\Base\Req.cs" />
