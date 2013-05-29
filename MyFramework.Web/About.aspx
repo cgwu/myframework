@@ -2,6 +2,11 @@
     CodeBehind="About.aspx.cs" Inherits="MyFramework.Web.About" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+<script type="text/javascript">
+    $(function () {
+        alert("this is about");
+    });
+</script>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
