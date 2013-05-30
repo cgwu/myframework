@@ -71,6 +71,7 @@
     <Compile Include="Other\TestDateTimeRecreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCommon\TestDateUtil.cs" />
+    <Compile Include="TestDomain\ProductRepository_Fixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyFramework.Common\MyFramework.Common.csproj">
