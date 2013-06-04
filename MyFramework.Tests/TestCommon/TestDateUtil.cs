@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MyFramework.Common.Message.Base;
-using MyFramework.Common.Message.Util;
+using Afx.Common.Message.Base;
+using Afx.Common.Message.Util;
 
 namespace MyFramework.Tests.TestCommon
 {

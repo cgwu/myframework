@@ -137,14 +137,16 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="Config\castle.windsor.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Abstract\_ReadMe.txt" />
     <Content Include="Concrete\_ReadMe.txt" />
-    <Content Include="hibernate.cfg.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="Config\hibernate.cfg.xml" />
     <Content Include="Util\_ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

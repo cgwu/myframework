@@ -5,6 +5,7 @@ using System.Text;
 using NHibernate;
 using NHibernate.Cfg;
 using MyFramework.Common.NHibernate.Domain;
+using System.Reflection;
 
 namespace MyFramework.Service.Util
 {
@@ -18,8 +19,12 @@ namespace MyFramework.Service.Util
             {
                 if (_sessionFactory == null)
                 {
+                    //Console.WriteLine("当前程序集名2:" + Assembly.GetExecutingAssembly().FullName);
+
                     var configuration = new Configuration();
-                    configuration.Configure();
+                    //configuration.Configure();        //从hibernate.cfg.xml文件配置 
+                    //configuration.Configure("Config/hibernate.cfg.xml");    //从指定文件
+                    configuration.Configure(Assembly.GetExecutingAssembly(), "MyFramework.Service.Config.hibernate.cfg.xml");    //从指定文件
                     configuration.AddAssembly(typeof(User).Assembly);
                     _sessionFactory = configuration.BuildSessionFactory();
                 }

@@ -9,6 +9,7 @@ using MyFramework.Common.NHibernate.Domain;
 using NHibernate.Tool.hbm2ddl;
 using MyFramework.Service.Concrete.Account;
 using MyFramework.Service.Abstract.Account;
+using System.Reflection;
 
 
 namespace MyFramework.Tests.TestDomain
@@ -40,18 +41,19 @@ namespace MyFramework.Tests.TestDomain
         [Test]
         public void Can_add_new_product()
         {
+            Console.WriteLine("当前程序集名1:" + Assembly.GetExecutingAssembly().FullName);
             Console.WriteLine("ProductRepository_Fixture 开始测试...");
 
             IProductRepository repository = new ProductRepository();
 
-            for (int i = 0; i < 500; i++)
+            for (int i = 0; i < 100; i++)
             {
                 var product = new Product { Category = "水果" };
                 product.Name = "苹果" + i;
                 repository.Add(product);
             }
 
-            for (int i = 0; i < 500; i++)
+            for (int i = 0; i < 100; i++)
             {
                 var product = new Product { Category = "粮食" };
                 product.Name = "大米" + i;
