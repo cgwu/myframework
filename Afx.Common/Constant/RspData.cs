@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyFramework.Common.Constant
+namespace Afx.Common.Constant
 {
     /// <summary>
     /// 业务Response返回数据常量定义

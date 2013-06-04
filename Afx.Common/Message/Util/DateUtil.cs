@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MyFramework.Common.Message.Base;
+using Afx.Common.Message.Base;
 
-namespace MyFramework.Common.Message.Util
+namespace Afx.Common.Message.Util
 {
     public static class DateUtil
     {

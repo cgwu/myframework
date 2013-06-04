@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyFramework.Common.Message.Base
+namespace Afx.Common.Message.Base
 {
+    /// <summary>
+    /// 业务请求对象
+    /// </summary>
     public class Req : Message
     {
         /// <summary>

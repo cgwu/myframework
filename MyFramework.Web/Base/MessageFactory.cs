@@ -1,5 +1,5 @@
 ﻿using System;
-using MyFramework.Common.Message.Base;
+using Afx.Common.Message.Base;
 using MyFramework.Common.Abstract;
 
 namespace MyFramework.Web.Base

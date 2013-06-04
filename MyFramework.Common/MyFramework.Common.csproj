@@ -43,25 +43,21 @@
     <Compile Include="Abstract\ISession.cs" />
     <Compile Include="Constant\RspData.cs" />
     <Compile Include="Constant\SysConstant.cs" />
-    <Compile Include="Message\Base\DateRangeReq.cs" />
-    <Compile Include="Message\Base\Message.cs" />
-    <Compile Include="Message\Util\DateUtil.cs" />
-    <Compile Include="Message\Util\MessageUtil.cs" />
-    <Compile Include="Message\Base\Page.cs" />
-    <Compile Include="Message\Base\PageReq.cs" />
-    <Compile Include="Message\Base\Req.cs" />
-    <Compile Include="Message\Base\Rsp.cs" />
     <Compile Include="NHibernate\Domain\Product.cs" />
     <Compile Include="NHibernate\Domain\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Afx.Common\Afx.Common.csproj">
+      <Project>{AAAF9FF9-5CC4-4074-ABD9-2D9000737454}</Project>
+      <Name>Afx.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Constant\_ReadMe.txt" />
     <Content Include="NHibernate\Domain\_ReadMe.txt" />
     <EmbeddedResource Include="NHibernate\Mapping\Product.hbm.xml" />
     <Content Include="NHibernate\Mapping\_ReadMe.txt" />
-    <Content Include="Message\_ReadMe.txt" />
     <EmbeddedResource Include="NHibernate\Mapping\User.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyFramework.Common.Message.Base
+namespace Afx.Common.Message.Base
 {
     /// <summary>
     /// 有分页的请求对象
     /// </summary>
-    public class PageReq : Req
+    public class DateRangeReq : PageReq
     {
-        public Page Page { get; set; }
+        public string BeginDate { get; set; }
+        public string EndDate { get; set; }
     }
 }

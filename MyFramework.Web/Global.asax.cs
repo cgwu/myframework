@@ -4,22 +4,30 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using Castle.Windsor;
+using Afx.Common.Ioc;
 
 namespace MyFramework.Web
 {
-    public class Global : System.Web.HttpApplication
+    public class Global : System.Web.HttpApplication, IContainerAccessor
     {
+        private static WebAppContainer _webAppContainer = null;
+
+        public IWindsorContainer Container
+        {
+            get { return _webAppContainer; }
+        }
 
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-
+            _webAppContainer = Ioc.Container;
         }
 
         void Application_End(object sender, EventArgs e)
         {
             //  Code that runs on application shutdown
-
+            _webAppContainer.Dispose();
         }
 
         void Application_Error(object sender, EventArgs e)
@@ -42,6 +50,7 @@ namespace MyFramework.Web
             // or SQLServer, the event is not raised.
 
         }
+
 
     }
 }

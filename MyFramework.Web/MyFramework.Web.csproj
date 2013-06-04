@@ -201,6 +201,10 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Afx.Common\Afx.Common.csproj">
+      <Project>{AAAF9FF9-5CC4-4074-ABD9-2D9000737454}</Project>
+      <Name>Afx.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyFramework.Common\MyFramework.Common.csproj">
       <Project>{B9E8CCED-FF59-4961-860F-055979B3C774}</Project>
       <Name>MyFramework.Common</Name>
