@@ -12,6 +12,23 @@ namespace Afx.Common.Ioc
         public WebAppContainer()
             : base(new XmlInterpreter())
         {
+            //http://docs.castleproject.org/Windsor.Installers.ashx
+
+            /*
+             
+             public class RepositoriesInstaller : IWindsorInstaller
+{
+   public void Install(IWindsorContainer container, IConfigurationStore store)
+   {
+      container.Register(AllTypes.FromAssemblyNamed("Acme.Crm.Data")
+                            .Where(type => type.Name.EndsWith("Repository"))
+                            .WithService.DefaultInterface()
+                            .Configure(c => c.LifeStyle.PerWebRequest));
+   }
+}
+             
+             */
+
             //Register(Component.For<DbFactory>().LifestyleSingleton());
 
             //Register(AllTypes.FromAssembly(Assembly.GetAssembly(typeof(MyService)))
