@@ -194,6 +194,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Util\ClientMsg.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
