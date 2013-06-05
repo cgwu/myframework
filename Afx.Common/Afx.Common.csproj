@@ -47,8 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constant\RspData.cs" />
-    <Compile Include="Ioc\Ioc.cs" />
-    <Compile Include="Ioc\WebAppContainer.cs" />
     <Compile Include="Message\Base\DateRangeReq.cs" />
     <Compile Include="Message\Base\Message.cs" />
     <Compile Include="Message\Base\Page.cs" />

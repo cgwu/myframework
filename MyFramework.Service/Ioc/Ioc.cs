@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Castle.Windsor;
+using Castle.Windsor.Installer;
+using Castle.Core.Resource;
 
-namespace Afx.Common.Ioc
+namespace MyFramework.Service.Ioc
 {
     public static class Ioc
     {
@@ -26,6 +28,9 @@ namespace Afx.Common.Ioc
                         if (_container == null)
                         {
                             _container = new WebAppContainer();
+                            _container.Install(
+                                Configuration.FromXml(new AssemblyResource("assembly://MyFramework.Service/Config/castle.windsor.config"))
+                            );
                         }
                     }
                 }

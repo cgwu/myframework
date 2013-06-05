@@ -23,8 +23,13 @@ namespace MyFramework.Service.Util
 
                     var configuration = new Configuration();
                     //configuration.Configure();        //从hibernate.cfg.xml文件配置 
-                    //configuration.Configure("Config/hibernate.cfg.xml");    //从指定文件
-                    configuration.Configure(Assembly.GetExecutingAssembly(), "MyFramework.Service.Config.hibernate.cfg.xml");    //从指定文件
+
+                    //从指定文件
+                    //configuration.Configure("Config/hibernate.cfg.xml");
+
+                    //从程序资源中读取
+                    configuration.Configure(Assembly.GetExecutingAssembly(), "MyFramework.Service.Config.hibernate.cfg.xml");    
+
                     configuration.AddAssembly(typeof(User).Assembly);
                     _sessionFactory = configuration.BuildSessionFactory();
                 }

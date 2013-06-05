@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using Castle.Windsor;
-using Afx.Common.Ioc;
+using MyFramework.Service.Ioc;
 
 namespace MyFramework.Web
 {

@@ -34,6 +34,9 @@
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.2.0\lib\net40-client\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Facilities.FactorySupport">
+      <HintPath>..\packages\Castle.FactorySupportFacility.3.2.0\lib\net40\Castle.Facilities.FactorySupport.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Facilities.NHibernateIntegration">
       <HintPath>..\packages\Castle.Facilities.NHibernateIntegration.1.1.0\lib\NET40\Castle.Facilities.NHibernateIntegration.dll</HintPath>
     </Reference>
@@ -73,6 +76,7 @@
     <Compile Include="TestCommon\TestDateUtil.cs" />
     <Compile Include="TestConfig\TestResource.cs" />
     <Compile Include="TestDomain\ProductRepository_Fixture.cs" />
+    <Compile Include="TestIoc\TestIocConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Afx.Common\Afx.Common.csproj">

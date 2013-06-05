@@ -4,14 +4,17 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <h2>
-        Welcome to ASP.NET!
-    </h2>
     <p>
-        To learn more about ASP.NET visit <a href="http://www.asp.net" title="ASP.NET Website">www.asp.net</a>.
+        <br />
+        增加一个水果:</p>
+    <p>
+        <asp:Label ID="Label1" runat="server" Text="分类名:"></asp:Label>
+        <asp:TextBox ID="txtCategory" runat="server"></asp:TextBox>
     </p>
     <p>
-        You can also find <a href="http://go.microsoft.com/fwlink/?LinkID=152368&amp;clcid=0x409"
-            title="MSDN ASP.NET Docs">documentation on ASP.NET at MSDN</a>.
+        <asp:Label ID="Label2" runat="server" Text="水果名:"></asp:Label>
+        <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
     </p>
+    <asp:Button ID="Button1" runat="server" Text="增加" onclick="Button1_Click" /><br />
+    <asp:Label ID="lblMsg" runat="server" Text="" ForeColor="Red"></asp:Label>
 </asp:Content>
