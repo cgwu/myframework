@@ -1,8 +1,8 @@
 myframework
 ===========
 
-.net Web App framework 实验测试
+.net Web App framework (Only for test)
 
-环境:
+environment:
 VS 2010
 .net framework 4.0
