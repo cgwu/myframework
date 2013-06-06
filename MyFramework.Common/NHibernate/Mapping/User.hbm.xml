@@ -2,12 +2,12 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="MyFramework.Common" 
                    namespace="MyFramework.Common.NHibernate.Domain">
   <!-- more mapping info here -->
-  <class name="User" table="TUser">   <!--lazy="false"-->
-    <id name="Id">
+  <class name="User" table="user_info">   <!--lazy="false"-->
+    <id name="Id" type="Int64">
       <generator class="native" />
     </id>
-    <property name="Name" length="60" />
-    <property name="Password" length="30" />
-    <property name="Birthday" />
+    <property name="Name" type="AnsiString" length="60" />
+    <property name="Password"  type="AnsiString" length="30" />
+    <property name="Birthday" type="DateTime"/>
   </class>
 </hibernate-mapping>

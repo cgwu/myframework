@@ -55,9 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Constant\_ReadMe.txt" />
-    <Content Include="NHibernate\Domain\_ReadMe.txt" />
-    <EmbeddedResource Include="NHibernate\Mapping\Product.hbm.xml" />
-    <Content Include="NHibernate\Mapping\_ReadMe.txt" />
+    <EmbeddedResource Include="NHibernate\Mapping\Product.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="NHibernate\Mapping\User.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

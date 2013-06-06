@@ -1,0 +1,23 @@
+1.Hbm2net : 根据hbm生成实体类文件
+http://nhforge.org/media/p/546.aspx
+用法:
+Use:hbm2net  [-config:configuration file] [-output:output dir] [-ct:check target
+ time] files.hbm.xml ( wildcards allowed )
+
+例：
+hbm2net.exe -output:D:\Workspace\Tests\VS2010\MyFramework\MyFramework.Common\NHibernate\Domain  D:\Workspace\Tests\VS2010\MyFramework\MyFramework.Common\NHibernate\Mapping\*.hbm.xml
+
+T4 Hbm2net release
+Code generate C# classes from hbm files ( or any other artifact, customizing/adding templates ). Based on the old hbm2net, this version leverages T4 as a template language. Use hbm2net *.hbm.xml. Launch without parameters in order to see a little help.
+
+2.hbm生成数据库
+	var cfg = new Configuration();
+	cfg.Configure();
+	cfg.AddAssembly(typeof(User).Assembly);
+
+	//new SchemaExport(cfg).Execute(false, true, false, false);
+	new SchemaExport(cfg).Execute(true, true, false);
+
+	
+3. NUnit for VS
+VisualNunitPackage.vsix
