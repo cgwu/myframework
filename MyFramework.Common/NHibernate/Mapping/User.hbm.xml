@@ -8,6 +8,7 @@
     </id>
     <property name="Name" type="AnsiString" length="60" />
     <property name="Password"  type="AnsiString" length="30" />
-    <property name="Birthday" type="DateTime"/>
+    <!-- Timestamp 支持毫秒，DateTime不支持毫秒-->
+    <property name="Birthday" type="Timestamp"/>
   </class>
 </hibernate-mapping>

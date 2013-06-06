@@ -18,7 +18,7 @@ namespace MyFramework.Common.NHibernate.Domain
 	{
 
 	#region private fields
-		Guid _id;	
+		Int64 _id;	
 		String _name;	
 		String _category;	
 		Decimal? _price;	
@@ -28,7 +28,7 @@ namespace MyFramework.Common.NHibernate.Domain
 		/// <summary>
 		///		
 		/// </summary>
-		public virtual Guid Id
+		public virtual Int64 Id
 		{
 			get{ return _id; }
 			set{ _id = value; }

@@ -3,11 +3,11 @@
                    namespace="MyFramework.Common.NHibernate.Domain">
   <!-- more mapping info here -->
   <class name="Product" table="product">   <!--lazy="false"-->
-    <id name="Id" type="Guid">
-      <generator class="guid" />
+    <id name="Id" type="Int64">
+      <generator class="native" />
     </id>
-    <property name="Name" length="60" />
-    <property name="Category" length="30" />
+    <property name="Name" type="String" length="60" />
+    <property name="Category" type="String" length="30" />
     <property name="Price" type="Decimal" precision="19" scale="6" />
   </class>
 </hibernate-mapping>

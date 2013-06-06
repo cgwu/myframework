@@ -36,8 +36,10 @@ namespace MyFramework.Tests.TestDomain
         [SetUp]
         public void SetupContext()
         {
+            /*
             Console.WriteLine("ProductRepository_Fixture SetUp");
             new SchemaExport(_configuration).Execute(false, true, false);
+             */
         }
 
         [Test]
@@ -47,7 +49,7 @@ namespace MyFramework.Tests.TestDomain
 
             IProductRepository repository = new ProductRepository();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var product = new Product { Category = "水果" };
                 product.Name = "苹果" + i;
@@ -55,7 +57,7 @@ namespace MyFramework.Tests.TestDomain
                 repository.Add(product);
             }
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var product = new Product { Category = "粮食" };
                 product.Name = "大米" + i;
@@ -66,7 +68,7 @@ namespace MyFramework.Tests.TestDomain
             using(var session = this._sessionFactory.OpenSession())
             using (var tran = session.BeginTransaction())
             {
-                for (int i = 0; i < 100; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     var u = new User { Name = "cg" + i.ToString(), Password = "000000" + i.ToString() };
                     u.Birthday = DateTime.Now;

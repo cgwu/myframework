@@ -79,6 +79,9 @@
     <Reference Include="Memcached.ClientLibrary">
       <HintPath>..\packages\Memcached.ClientLibrary.1.0\lib\net20\Memcached.ClientLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.6.5\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
@@ -137,7 +140,9 @@
       <Name>MyFramework.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Config\hibernate.cfg.xml" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <EmbeddedResource Include="Config\castle.windsor.config">
@@ -146,7 +151,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\hibernate.cfg.xml" />
+    <EmbeddedResource Include="Config\sqlserver-hibernate.cfg.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
