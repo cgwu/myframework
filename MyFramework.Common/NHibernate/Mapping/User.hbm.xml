@@ -10,5 +10,6 @@
     <property name="Password"  type="AnsiString" length="30" />
     <!-- Timestamp 支持毫秒，DateTime不支持毫秒-->
     <property name="Birthday" type="Timestamp"/>
+    <property name="Role" column="RoleId" type="int"></property>
   </class>
 </hibernate-mapping>

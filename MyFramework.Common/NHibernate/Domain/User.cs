@@ -22,6 +22,7 @@ namespace MyFramework.Common.NHibernate.Domain
 		String _name;	
 		String _password;	
 		DateTime? _birthday;	
+		Int32? _role;	/* RoleId */
 	#endregion
 		
 	#region getter/setters		
@@ -56,6 +57,14 @@ namespace MyFramework.Common.NHibernate.Domain
 		{
 			get{ return _birthday; }
 			set{ _birthday = value; }
+		}
+		/// <summary>
+		///		
+		/// </summary>
+		public virtual Int32? Role
+		{
+			get{ return _role; }
+			set{ _role = value; }
 		}
 	#endregion
 	}
