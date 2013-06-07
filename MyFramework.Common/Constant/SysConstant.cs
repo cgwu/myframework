@@ -17,15 +17,8 @@ namespace MyFramework.Common.Constant
     {
         Corporate = 0,
         Company = 1,
-        SubCompany = 2,
-        Senior = 3,
-        Master = 4,
-        Agent = 5,
-        Member = 6,
-        SubMember = 7
+        Other = 2
     }
-
-
 
     #region 数据库类型DbType
     public enum DbType
