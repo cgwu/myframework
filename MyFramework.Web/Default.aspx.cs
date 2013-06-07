@@ -8,11 +8,14 @@ using MyFramework.Service.Ioc;
 using MyFramework.Service.Abstract.Account;
 using MyFramework.Common.NHibernate.Domain;
 using MyFramework.Web.Util;
+using log4net;
 
 namespace MyFramework.Web
 {
     public partial class _Default : System.Web.UI.Page
     {
+        private static ILog log = LogManager.GetLogger("MAIL");
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,6 +26,13 @@ namespace MyFramework.Web
             var product = new Product { Category = this.txtCategory.Text.Trim(), Name = this.txtName.Text.Trim() };
             productRepo.Add(product);
 
+            for (int i = 0; i < 5; i++)
+            {
+                log.Info("添加了一个分类info:" + this.txtCategory.Text);
+                log.Warn("添加了一个分类warn:" + this.txtCategory.Text);
+                log.Error("添加了一个分类error:" + this.txtCategory.Text);
+                log.FatalFormat("添加了一个分类error:{0},Name:{1}", this.txtCategory.Text, this.txtName.Text);
+            }
             //ClientMsg.WriteAjax(this, "alert('成功')");
 
             //ClientMsg.Write(this, "alert('成功')");

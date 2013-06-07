@@ -6,11 +6,14 @@ using System.Web.Security;
 using System.Web.SessionState;
 using Castle.Windsor;
 using MyFramework.Service.Ioc;
+using log4net;
 
 namespace MyFramework.Web
 {
     public class Global : System.Web.HttpApplication, IContainerAccessor
     {
+        private static ILog log = LogManager.GetLogger(typeof(Global));
+
         private static WebAppContainer _webAppContainer = null;
 
         public IWindsorContainer Container
@@ -21,12 +24,14 @@ namespace MyFramework.Web
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+            log.Info("Application启动");
             _webAppContainer = Ioc.Container;
         }
 
         void Application_End(object sender, EventArgs e)
         {
             //  Code that runs on application shutdown
+            log.Info("Application停止");
             _webAppContainer.Dispose();
         }
 

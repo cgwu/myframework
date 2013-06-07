@@ -20,6 +20,8 @@ for your own use before compile tests in VisualStudio.
     <property name="show_sql">false</property>
     
     <!--  update | create  | create-drop | validate  -->
+    <!--
     <property name="hbm2ddl.auto">validate</property>
+    -->
 	</session-factory>
 </hibernate-configuration>

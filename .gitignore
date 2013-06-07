@@ -2,3 +2,4 @@
 bin
 obj
 /MyFramework.Tests/*.user
+/MyFramework.Web/App_Data/log/*.log
