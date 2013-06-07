@@ -22,4 +22,3 @@ Code generate C# classes from hbm files ( or any other artifact, customizing/add
 3. NUnit for VS
 VisualNunitPackage.vsix
 
-from home

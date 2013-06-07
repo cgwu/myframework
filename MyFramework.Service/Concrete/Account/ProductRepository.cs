@@ -32,7 +32,7 @@ namespace MyFramework.Service.Concrete.Account
             throw new NotImplementedException();
         }
 
-        public Common.NHibernate.Domain.Product GetById(Guid productId)
+        public Common.NHibernate.Domain.Product GetById(Int64 productId)
         {
             using (ISession session = NHibernateHelper.OpenSession())
                 return session.Get<Product>(productId);

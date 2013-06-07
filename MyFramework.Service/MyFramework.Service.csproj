@@ -129,6 +129,7 @@
     <Compile Include="Ioc\WebAppContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\NHibernateHelper.cs" />
+    <Compile Include="Util\SFHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Afx.Common\Afx.Common.csproj">

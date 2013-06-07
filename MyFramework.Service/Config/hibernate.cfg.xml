@@ -21,7 +21,7 @@ for your own use before compile tests in VisualStudio.
     
     <!--  update | create  | create-drop | validate  -->
     <!--
-    <property name="hbm2ddl.auto">validate</property>
+    <property name="hbm2ddl.auto">create</property>
     -->
-	</session-factory>
+  </session-factory>
 </hibernate-configuration>

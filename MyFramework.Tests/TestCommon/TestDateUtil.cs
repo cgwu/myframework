@@ -14,7 +14,6 @@ namespace MyFramework.Tests.TestCommon
     public class TestDateUtil
     {
         private const string log4netconfigFile= "log4net.config";
-
         private static ILog log = LogManager.GetLogger(typeof(TestDateUtil));
 
 

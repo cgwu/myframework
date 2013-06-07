@@ -11,12 +11,13 @@ using MyFramework.Service.Concrete.Account;
 using MyFramework.Service.Abstract.Account;
 using System.Reflection;
 using MyFramework.Service.Util;
+using MyFramework.Tests.Base;
 
 
 namespace MyFramework.Tests.TestDomain
 {
     [TestFixture]
-    public class ProductRepository_Fixture
+    public class ProductRepository_Fixture:LogCase
     {
 
         private ISessionFactory _sessionFactory;
@@ -25,22 +26,25 @@ namespace MyFramework.Tests.TestDomain
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
         {
-            Console.WriteLine("ProductRepository_Fixture TestFixtureSetUp");
             _configuration = new Configuration();
             //_configuration.Configure();
             _configuration.Configure(Assembly.GetAssembly(typeof(NHibernateHelper)), "MyFramework.Service.Config.hibernate.cfg.xml");
+            
             _configuration.AddAssembly(typeof(User).Assembly);
             _sessionFactory = _configuration.BuildSessionFactory();
-        }
 
-        [SetUp]
-        public void SetupContext()
-        {
-            /*
-            Console.WriteLine("ProductRepository_Fixture SetUp");
-            new SchemaExport(_configuration).Execute(false, true, false);
-             */
+            log.Info("NHibernate Session Factory配置完成!");
         }
+        /*
+       [SetUp]
+       public void SetupContext()
+       {
+           
+           Console.WriteLine("ProductRepository_Fixture SetUp");
+           new SchemaExport(_configuration).Execute(false, true, false);
+           
+       }
+       */
 
         [Test]
         public void Can_add_new_product()
@@ -86,8 +90,8 @@ namespace MyFramework.Tests.TestDomain
         {
             Console.WriteLine("ProductRepository_Fixture 开始测试 GetById");
             IProductRepository repository = new ProductRepository();
-            Product p = repository.GetById(new Guid("bb318dd5-73be-4543-abe4-007784e1f63b"));
-            Console.WriteLine("Id:" + p.Id + "name:" + p.Name + ",category:" + p.Category);
+            Product p = repository.GetById(1);
+            log.Info("Id:" + p.Id + "name:" + p.Name + ",category:" + p.Category);
         }
 
 
