@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace MyFramework.Tests.Other
+namespace MyFramework.Tests.TestCommon
 {
 
     public class TestDateTimeRecreate
