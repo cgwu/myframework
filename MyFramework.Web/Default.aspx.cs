@@ -26,6 +26,7 @@ namespace MyFramework.Web
             var product = new Product { Category = this.txtCategory.Text.Trim(), Name = this.txtName.Text.Trim() };
             productRepo.Add(product);
 
+            /*
             for (int i = 0; i < 5; i++)
             {
                 log.Info("添加了一个分类info:" + this.txtCategory.Text);
@@ -33,6 +34,7 @@ namespace MyFramework.Web
                 log.Error("添加了一个分类error:" + this.txtCategory.Text);
                 log.FatalFormat("添加了一个分类error:{0},Name:{1}", this.txtCategory.Text, this.txtName.Text);
             }
+            */
             //ClientMsg.WriteAjax(this, "alert('成功')");
 
             //ClientMsg.Write(this, "alert('成功')");
