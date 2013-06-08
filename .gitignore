@@ -1,5 +1,6 @@
 /*.suo
 bin
 obj
-/MyFramework.Tests/*.user
+*.user
 /MyFramework.Web/App_Data/log/*.log
+

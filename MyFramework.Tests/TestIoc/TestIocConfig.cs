@@ -8,6 +8,9 @@ using MyFramework.Service.Abstract.Account;
 using MyFramework.Common.NHibernate.Domain;
 using MyFramework.Tests.Base;
 using Castle.Core.Logging;
+using Castle.Facilities.NHibernateIntegration.Components.Dao;
+using NHibernate;
+using Castle.Facilities.NHibernateIntegration;
 
 namespace MyFramework.Tests.TestIoc
 {
@@ -31,5 +34,13 @@ namespace MyFramework.Tests.TestIoc
 
              con.Dispose();
         }
+
+         [Test]
+        public void TestWindsorNHibernate()
+        {
+            //NHibernateGenericDao dao =null;// new NHibernateGenericDao()
+
+         }
+
     }
 }
