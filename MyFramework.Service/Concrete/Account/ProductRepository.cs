@@ -7,19 +7,35 @@ using NHibernate;
 using MyFramework.Service.Util;
 using MyFramework.Common.NHibernate.Domain;
 using NHibernate.Criterion;
+using Castle.Core.Logging;
 
 namespace MyFramework.Service.Concrete.Account
 {
     public class ProductRepository : IProductRepository
     {
+        private ILogger logger = NullLogger.Instance;
+        /// <summary>
+        /// Windsor注册ProductRepository这个component时会自动注入该属性
+        /// </summary>
+        public ILogger Logger
+        {
+            get { return logger; }
+            set { logger = value; }
+        }
+
+
         public void Add(Common.NHibernate.Domain.Product product)
         {
-            using (ISession session = NHibernateHelper.OpenSession())
+            Logger.InfoFormat("正在Add Product{0}", product.Name);
+
+            //using (ISession session = NHibernateHelper.OpenSession())
+            using (ISession session = SFHelper.SfCompanyMain.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
             {
                 session.Save(product);
                 transaction.Commit();
             }
+            Logger.InfoFormat("完成Add Product{0}", product.Name);
         }
 
         public void Update(Common.NHibernate.Domain.Product product)

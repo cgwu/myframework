@@ -37,8 +37,14 @@
     <Reference Include="Castle.Facilities.FactorySupport">
       <HintPath>..\packages\Castle.FactorySupportFacility.3.2.0\lib\net40\Castle.Facilities.FactorySupport.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Facilities.Logging">
+      <HintPath>..\packages\Castle.LoggingFacility.3.2.0\lib\net40\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Facilities.NHibernateIntegration">
       <HintPath>..\packages\Castle.Facilities.NHibernateIntegration.1.1.0\lib\NET40\Castle.Facilities.NHibernateIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration">
+      <HintPath>..\packages\Castle.Core-log4net.3.2.0\lib\net40\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Services.Transaction">
       <HintPath>..\packages\Castle.Services.Transaction.2.5.0\lib\NET40\Castle.Services.Transaction.dll</HintPath>
@@ -66,6 +72,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

@@ -48,11 +48,17 @@
     <Reference Include="Castle.Facilities.NHibernate, Version=0.7.1.23602, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Facilities.NHibernate.0.7.1.23602\lib\net40\Castle.Facilities.NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Facilities.NHibernateIntegration">
+      <HintPath>..\packages\Castle.Facilities.NHibernateIntegration.1.1.0\lib\NET40\Castle.Facilities.NHibernateIntegration.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Facilities.WcfIntegration">
       <HintPath>..\packages\Castle.WcfIntegrationFacility.3.2.0\lib\net40\Castle.Facilities.WcfIntegration.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Services.Logging.Log4netIntegration">
       <HintPath>..\packages\Castle.Core-log4net.3.2.0\lib\net40\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Transaction">
+      <HintPath>..\packages\Castle.Services.Transaction.2.5.0\lib\NET40\Castle.Services.Transaction.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Transactions, Version=3.1.206.2206, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Transactions.3.1.206.2206\lib\net40\Castle.Transactions.dll</HintPath>
@@ -90,6 +96,9 @@
     </Reference>
     <Reference Include="NHibernate.Caches.Redis">
       <HintPath>..\packages\NHibernate.Caches.Redis.1.2.0.0\lib\net40\NHibernate.Caches.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="NVelocity">
+      <HintPath>..\packages\Castle.NVelocity.1.1.1\lib\net40\NVelocity.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Common">
       <HintPath>..\packages\ServiceStack.Common.3.9.46\lib\net35\ServiceStack.Common.dll</HintPath>
@@ -142,7 +151,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\hibernate.cfg.xml" />
+    <EmbeddedResource Include="Config\mysql5-hibernate.cfg.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -152,7 +161,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\sqlserver-hibernate.cfg.xml">
+    <EmbeddedResource Include="Config\hibernate.cfg.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

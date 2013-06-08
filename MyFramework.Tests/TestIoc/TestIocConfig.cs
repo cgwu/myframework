@@ -6,6 +6,8 @@ using NUnit.Framework;
 using MyFramework.Service.Ioc;
 using MyFramework.Service.Abstract.Account;
 using MyFramework.Common.NHibernate.Domain;
+using MyFramework.Tests.Base;
+using Castle.Core.Logging;
 
 namespace MyFramework.Tests.TestIoc
 {
