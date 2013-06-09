@@ -5,6 +5,7 @@ using System.Text;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using Castle.Core.Resource;
+using Castle.Facilities.NHibernateIntegration;
 
 namespace MyFramework.Service.Ioc
 {
@@ -28,6 +29,7 @@ namespace MyFramework.Service.Ioc
                         if (_container == null)
                         {
                             _container = new WebAppContainer();
+                            
                             _container.Install(
                                 Configuration.FromXml(new AssemblyResource("assembly://MyFramework.Service/Config/castle.windsor.config"))
                             );

@@ -25,15 +25,17 @@ namespace MyFramework.Service.Util
     {
         private static ILog log = LogManager.GetLogger(typeof(SFHelper));
         /*
+        //mysql 5
         private const string connCorporate = "Database=TestHibernate;Data Source=127.0.0.1;User Id=root;Password=Admin12345";
         private const string connCompany = "Database=TestHibernateMain;Data Source=127.0.0.1;User Id=company;Password=12345";
         private const string connCompanyReport = "Database=TestHibernateReport;Data Source=127.0.0.1;User Id=companyReport;Password=12345";
         */
+
+        //sqlserver 2008 r2
         private const string connCorporate = "Database=DProject_FBak;Data Source=183.81.167.71;User Id=dproject;Password=AD12345min^&*";
         private const string connCompany   = "Database=DProject_FBak;Data Source=183.81.167.75;User Id=dproject;Password=AD12345min^&*";
         private const string connCompanyReport = "Database=DProject_Report_4DBS1;Data Source=183.81.167.71;User Id=dproject;Password=AD12345min^&*";
         
-
         private static ISessionFactory _sfCorporate=null;
         private static ISessionFactory _sfCompany = null;
         private static ISessionFactory _sfCompanyReport= null;
