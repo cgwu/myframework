@@ -35,12 +35,12 @@ namespace MyFramework.Tests.TestIoc
              con.Dispose();
         }
 
-         [Test]
+        [Test]
         public void TestWindsorNHibernate()
         {
-            //NHibernateGenericDao dao =null;// new NHibernateGenericDao()
+            NHibernateGenericDao dao = null;// new NHibernateGenericDao()
 
-         }
+        }
 
     }
 }

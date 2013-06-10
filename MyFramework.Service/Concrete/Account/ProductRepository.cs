@@ -8,6 +8,7 @@ using MyFramework.Service.Util;
 using MyFramework.Common.NHibernate.Domain;
 using NHibernate.Criterion;
 using Castle.Core.Logging;
+using Castle.Facilities.NHibernateIntegration;
 
 namespace MyFramework.Service.Concrete.Account
 {
@@ -23,13 +24,22 @@ namespace MyFramework.Service.Concrete.Account
             set { logger = value; }
         }
 
+        //private ISessionManager sessionManager;
+
+        //public ProductRepository(ISessionManager sessionManager)
+        //{
+        //    this.sessionManager = sessionManager;
+        //}
 
         public void Add(Common.NHibernate.Domain.Product product)
         {
             Logger.InfoFormat("正在Add Product{0}", product.Name);
 
-            //using (ISession session = NHibernateHelper.OpenSession())
-            using (ISession session = SFHelper.SfCompanyMain.OpenSession())
+            //法1
+            /*using (ISession session = NHibernateHelper.OpenSession())*/
+            //法2:
+            using (ISession session = SFHelper.SfCompanyMain.OpenSession())     
+            //using (ISession session = sessionManager.OpenSession("dbMain"))   //法3:失败
             using (ITransaction transaction = session.BeginTransaction())
             {
                 session.Save(product);

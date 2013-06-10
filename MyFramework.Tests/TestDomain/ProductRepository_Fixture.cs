@@ -12,6 +12,7 @@ using MyFramework.Service.Abstract.Account;
 using System.Reflection;
 using MyFramework.Service.Util;
 using MyFramework.Tests.Base;
+using MyFramework.Service.Ioc;
 
 
 namespace MyFramework.Tests.TestDomain
@@ -22,6 +23,9 @@ namespace MyFramework.Tests.TestDomain
 
         private ISessionFactory _sessionFactory;
         private Configuration _configuration;
+
+
+        IProductRepository repository = null;
 
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
@@ -35,23 +39,19 @@ namespace MyFramework.Tests.TestDomain
 
             log.Info("NHibernate Session Factory配置完成!");
         }
-        /*
        [SetUp]
        public void SetupContext()
        {
-           
-           Console.WriteLine("ProductRepository_Fixture SetUp");
-           new SchemaExport(_configuration).Execute(false, true, false);
-           
+           repository = Ioc.Container.Resolve<IProductRepository>();
+           //Console.WriteLine("ProductRepository_Fixture SetUp");
+           //new SchemaExport(_configuration).Execute(false, true, false);
        }
-       */
 
         [Test]
         public void Can_add_new_product()
         {
             //Console.WriteLine("当前程序集名1:" + Assembly.GetExecutingAssembly().FullName);
 
-            IProductRepository repository = new ProductRepository();
 
             for (int i = 0; i < 10; i++)
             {
@@ -89,7 +89,6 @@ namespace MyFramework.Tests.TestDomain
         public void Get_by_id()
         {
             Console.WriteLine("ProductRepository_Fixture 开始测试 GetById");
-            IProductRepository repository = new ProductRepository();
             Product p = repository.GetById(1);
             log.Info("Id:" + p.Id + "name:" + p.Name + ",category:" + p.Category);
         }
@@ -99,7 +98,6 @@ namespace MyFramework.Tests.TestDomain
         public void TestGetByCategory()
         {
             Console.WriteLine("ProductRepository_Fixture 开始测试 GetByCategory");
-            IProductRepository repository = new ProductRepository();
             var products = repository.GetByCategory("粮食");
             foreach (var p in products)
             {
