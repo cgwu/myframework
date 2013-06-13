@@ -9,6 +9,8 @@ using MyFramework.Service.Abstract.Account;
 using MyFramework.Common.NHibernate.Domain;
 using MyFramework.Web.Util;
 using log4net;
+using NHibernate;
+using MyFramework.Service.Util;
 
 namespace MyFramework.Web
 {
@@ -22,6 +24,15 @@ namespace MyFramework.Web
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
+            /*
+            var sf = Ioc.Container.Resolve<ISessionFactory>("SfCompanyMain");
+            log.InfoFormat("连接串为:{0}",sf.OpenSession().Connection.ConnectionString);
+            */
+            for (int i = 0; i < 10; i++)
+            {
+                var sess= Ioc.Container.Resolve<INHSessionManager>();
+                log.Info(sess.GetHashCode());
+            }
             var productRepo = Ioc.Container.Resolve<IProductRepository>("productRepository");
             var product = new Product { Category = this.txtCategory.Text.Trim(), Name = this.txtName.Text.Trim() };
             productRepo.Add(product);

@@ -7,6 +7,10 @@ namespace MyFramework.Common.Constant
 {
     public abstract class SysConstant
     {
+        /// <summary>
+        /// 数据库区分的key
+        /// </summary>
+        public const string DbTypeKey = "is_company_iis";
 
     }
 
@@ -35,6 +39,11 @@ namespace MyFramework.Common.Constant
         /// 机构数据库
         /// </summary>
         CorporateMain,
+        /// <summary>
+        /// appSettings.is_company_iis == 1 则为 CompanyMain;
+        /// appSettings.is_company_iis == 0 则为 CorporateMain
+        /// </summary>
+        Default
     }
     #endregion
 

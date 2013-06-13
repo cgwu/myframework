@@ -8,6 +8,7 @@ using Castle.Core.Resource;
 using Castle.Facilities.NHibernateIntegration;
 using Castle.MicroKernel.Registration;
 using MyFramework.Service.Util;
+using MyFramework.Service.Ioc.Installers;
 
 namespace MyFramework.Service.Ioc
 {
@@ -31,10 +32,8 @@ namespace MyFramework.Service.Ioc
                         if (_container == null)
                         {
                             _container = new WebAppContainer();
-                            //_container.Register(
-                            //    Component.For<NHibernate.ISessionFactory>().Named("dbCorp").UsingFactoryMethod(_ => SFHelper.SfCorporate)
-                            //    );
                             _container.Install(
+                                new CommonInstaller(),
                                 Configuration.FromXml(new AssemblyResource("assembly://MyFramework.Service/Config/castle.windsor.config"))
                             );
                         }

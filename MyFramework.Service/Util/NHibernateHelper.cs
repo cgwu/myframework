@@ -9,6 +9,10 @@ using System.Reflection;
 
 namespace MyFramework.Service.Util
 {
+    /// <summary>
+    /// 不建议使用
+    /// </summary>
+    [Obsolete]
     public class NHibernateHelper
     {
         private static ISessionFactory _sessionFactory;
