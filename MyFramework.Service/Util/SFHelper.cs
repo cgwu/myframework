@@ -1,7 +1,9 @@
 ﻿/*
  !!!!!!!!!!!!!! 是否生成数据库结构，若是生产环境，一定要注释 !!!!!!!!!!!!!!!
  */
+#if DEBUG
 //#define GENERATE_SCHEMA
+#endif
 
 using System;
 using System.Collections.Generic;
@@ -32,10 +34,17 @@ namespace MyFramework.Service.Util
         */
 
         //sqlserver 2008 r2
-        private const string connCorporate = "Database=DProject_FBak;Data Source=183.81.167.71;User Id=dproject;Password=AD12345min^&*";
-        private const string connCompany   = "Database=DProject_FBak;Data Source=183.81.167.75;User Id=dproject;Password=AD12345min^&*";
-        private const string connCompanyReport = "Database=DProject_Report_4DBS1;Data Source=183.81.167.71;User Id=dproject;Password=AD12345min^&*";
+        /*
+        private const string connCorporate = "Database=FBak;Data Source=ip71;User Id=dproject;Password=pwd";
+        private const string connCompany   = "Database=FBak;Data Source=ip;User Id=dproject;Password=pwd";
+        private const string connCompanyReport = "Database=FBak;Data Source=ip;User Id=dproject;Password=pwd";
+        */
+
+        private const string connCorporate = "Database=DB_Corporate;Data Source=.;User Id=dproject;Password=123";
+        private const string connCompany = "Database=DB_Company;Data Source=.;User Id=dproject;Password=123";
+        private const string connCompanyReport = "Database=DB_CompanyReport;Data Source=.;User Id=dproject;Password=123";
         
+
         private static ISessionFactory _sfCorporate=null;
         private static ISessionFactory _sfCompany = null;
         private static ISessionFactory _sfCompanyReport= null;

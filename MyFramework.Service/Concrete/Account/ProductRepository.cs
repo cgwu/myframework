@@ -38,7 +38,7 @@ namespace MyFramework.Service.Concrete.Account
         private List<Product> GetMockProducts(Product p)
         {
             var list = new List<Product>();
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 10000; i++)
             {
                 list.Add(new Product
                 {
@@ -66,21 +66,22 @@ namespace MyFramework.Service.Concrete.Account
             var session = SessionManager.OpenSession();
             //var session = SessionManager.OpenStatelessSession();
 
-            //var products = GetMockProducts(product);
+            var products = GetMockProducts(product);
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
 
             using (ITransaction transaction = session.BeginTransaction())
             {
-                /*
                 foreach (var p in products)
                 {
                     //Logger.Info("正在增加："+p.Name);
                     //session.Insert(p);
                     session.Save(p);
-                }*/
-                session.Save(product);
+                }
+                 
+
+                //session.Save(product);
                 transaction.Commit();
             }
 
