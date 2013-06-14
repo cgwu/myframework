@@ -71,19 +71,30 @@ namespace MyFramework.Service.Concrete.Account
             var stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            using (ITransaction transaction = session.BeginTransaction())
-            {
-                foreach (var p in products)
-                {
-                    //Logger.Info("正在增加："+p.Name);
-                    //session.Insert(p);
-                    session.Save(p);
-                }
-                 
+           
 
-                //session.Save(product);
-                transaction.Commit();
-            }
+                //using (ITransaction transaction = session.BeginTransaction())
+                //{
+                    /*
+                    foreach (var p in products)
+                    {
+                        //Logger.Info("正在增加："+p.Name);
+                        //session.Insert(p);
+                        session.Save(p);
+                    }
+                     */
+                    session.Save(products[0]);
+                    //session.Save(product);
+                //    transaction.Commit();
+                //}
+
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    session.Save(products[1]);
+                    transaction.Commit();
+                }
+
+
 
             session.Close();
 
