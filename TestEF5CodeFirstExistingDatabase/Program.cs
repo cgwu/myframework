@@ -12,7 +12,7 @@ namespace TestEF5CodeFirstExistingDatabase
         {
             using (var db = new TestEF5Context())
             {
-                db.Users.Add(new User() { Name = "cuteCC", nick_name = "可爱CC" });
+                db.Users.Add(new User() { Name = "cuteCC1", nick_name = "可爱CC1" });
                 db.SaveChanges();
             }
 
