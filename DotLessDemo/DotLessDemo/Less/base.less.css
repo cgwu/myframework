@@ -1,6 +1,6 @@
-﻿@brand_color: #4D926F;
+﻿//@brand_color: #4D926F;
 
-//@brand_color: red;
+@brand_color: red;
 
 #header {
   color: @brand_color;
