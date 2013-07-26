@@ -3,3 +3,4 @@ obj
 *.user
 /MyFramework.Web/App_Data/log/*.log
 *.suo
+packages
