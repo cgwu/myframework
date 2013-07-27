@@ -1,0 +1,4516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.4dmy.net/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.4dmy.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.4dmy.net/">
+      <s:element name="ErrorMessage">
+        <s:complexType />
+      </s:element>
+      <s:element name="ErrorMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCloseTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCloseTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCloseTimeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New4DPlaceIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserIdx" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DrawDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="BetDateTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="BetNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BetBigAmt" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="BetSmallAmt" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BetUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="T3DBet" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DrawType" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="New4DPlaceInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="New4DPlaceInResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SmartFD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRetValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SmartFDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SmartFDResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRetValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSFD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRetValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSFDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SMSFDResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRetValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSMe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="S1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSMeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SMSMeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckConResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ExecuteSP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecuteSPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteSPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSP_Ret">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="s2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSP_RetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteSP_RetResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSPCol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecuteSPColResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteSPColResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSPCol_Ret">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet1" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSPCol_RetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteSPCol_RetResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet1" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecSPWithRS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="s2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecSPWithRSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecSPWithRSResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSPCol_RS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSPCol_RSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteSPCol_RSResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlaceInvest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlaceInvestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PlaceInvestResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlaceBuf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlaceBufResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PlaceBufResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PPay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PPayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PPayResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryCloseTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryCloseTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryCloseTimeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryDrawDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryDrawDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryDrawDetailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryNumLim">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryNumLimResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryNumLimResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryUsrOSDet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryUsrOSDetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryUsrOSDetResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryBRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryBRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryBRateResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAnnounce">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAnnounceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryAnnounceResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryPPCSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryPPCSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryPPCSetResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDept">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDeptResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePPCSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePPCSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SavePPCSetResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveProParamResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHFSys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHFSysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHFSysResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRes4D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRes4DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveRes4DResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryBetLstByUsr4D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryBetLstByUsr4DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryBetLstByUsr4DResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryMpleTrRep4D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryMpleTrRep4DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryMpleTrRep4DResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QrySTrByUsr4D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QrySTrByUsr4DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QrySTrByUsr4DResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProFTr4D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProFTr4DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProFTr4DResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjCLim">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjCLimResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AdjCLimResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save4DBLimR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save4DBLimRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save4DBLimRResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveStyle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveStyleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveStyleResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpFightSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpFightSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpFightSetResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryFightSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryFightSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryFightSetResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveActPO4D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveActPO4DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveActPO4DResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProD4D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProD4DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProD4DResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryRunner">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryRunnerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryRunnerResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PInv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry1" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PInvResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PInvResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAdInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAdInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryAdInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAdInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAdInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryAdInfoByIdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAdInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAdInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveAdInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpAdInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpAdInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpAdInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryMACommLvl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryMACommLvlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryMACommLvlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryMACommLvlAgt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryMACommLvlAgtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryMACommLvlAgtResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryMACommLvlMA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryMACommLvlMAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryMACommLvlMAResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpMACommLvl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpMACommLvlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpMACommLvlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAgtCommLvl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAgtCommLvlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryAgtCommLvlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAgtCommLvlAgt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAgtCommLvlAgtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryAgtCommLvlAgtResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAgtCommLvlRun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryAgtCommLvlRunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryAgtCommLvlRunResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpAgtCommLvl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpAgtCommLvlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpAgtCommLvlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryRunCommLvl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryRunCommLvlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryRunCommLvlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryRunCommLvlRun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryRunCommLvlRunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryRunCommLvlRunResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryRunCommLvlPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryRunCommLvlPlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QryRunCommLvlPlayerResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpRunCommLvl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpRunCommLvlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpRunCommLvlResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCheque">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddChequeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddChequeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QRpChAd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QRpChAdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QRpChAdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QRpChBank">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QRpChBankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QRpChBankResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QRpChAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QRpChAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QRpChAllResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QCrDr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QCrDrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QCrDrResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QCrDrHist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QCrDrHistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QCrDrHistResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransCrDr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransCrDrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransCrDrResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QPNLSys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QPNLSysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QPNLSysResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QPOHist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QPOHistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QPOHistResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SmartFDAd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRetValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="S3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SmartFDAdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SmartFDAdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRetValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ETLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s3" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ETLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETLoginResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ETLoginNoEnc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s3" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ETLoginNoEncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETLoginNoEncResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PInvETrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry1" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PInvETransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PInvETransResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PInvET">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry1" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PInvETResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PInvETResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PInsET">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAry1" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PInsETResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PInsETResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRAry" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DrawReult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DrawReultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DrawReultResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HotNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HotNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HotNumResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="s1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ErrorMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ErrorMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCloseTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCloseTime" />
+  </wsdl:message>
+  <wsdl:message name="GetCloseTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCloseTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="New4DPlaceInSoapIn">
+    <wsdl:part name="parameters" element="tns:New4DPlaceIn" />
+  </wsdl:message>
+  <wsdl:message name="New4DPlaceInSoapOut">
+    <wsdl:part name="parameters" element="tns:New4DPlaceInResponse" />
+  </wsdl:message>
+  <wsdl:message name="SmartFDSoapIn">
+    <wsdl:part name="parameters" element="tns:SmartFD" />
+  </wsdl:message>
+  <wsdl:message name="SmartFDSoapOut">
+    <wsdl:part name="parameters" element="tns:SmartFDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SMSFDSoapIn">
+    <wsdl:part name="parameters" element="tns:SMSFD" />
+  </wsdl:message>
+  <wsdl:message name="SMSFDSoapOut">
+    <wsdl:part name="parameters" element="tns:SMSFDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SMSMeSoapIn">
+    <wsdl:part name="parameters" element="tns:SMSMe" />
+  </wsdl:message>
+  <wsdl:message name="SMSMeSoapOut">
+    <wsdl:part name="parameters" element="tns:SMSMeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCon" />
+  </wsdl:message>
+  <wsdl:message name="CheckConSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckConResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSP" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSP_RetSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSP_Ret" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSP_RetSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSP_RetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSP_RetAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPColSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSPCol" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPColSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSPColResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPColAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPCol_RetSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSPCol_Ret" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPCol_RetSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSPCol_RetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPCol_RetAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ExecSPWithRSSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecSPWithRS" />
+  </wsdl:message>
+  <wsdl:message name="ExecSPWithRSSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecSPWithRSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecSPWithRSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPCol_RSSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSPCol_RS" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPCol_RSSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSPCol_RSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSPCol_RSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="PlaceInvestSoapIn">
+    <wsdl:part name="parameters" element="tns:PlaceInvest" />
+  </wsdl:message>
+  <wsdl:message name="PlaceInvestSoapOut">
+    <wsdl:part name="parameters" element="tns:PlaceInvestResponse" />
+  </wsdl:message>
+  <wsdl:message name="PlaceInvestAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="PlaceBufSoapIn">
+    <wsdl:part name="parameters" element="tns:PlaceBuf" />
+  </wsdl:message>
+  <wsdl:message name="PlaceBufSoapOut">
+    <wsdl:part name="parameters" element="tns:PlaceBufResponse" />
+  </wsdl:message>
+  <wsdl:message name="PlaceBufAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="PPaySoapIn">
+    <wsdl:part name="parameters" element="tns:PPay" />
+  </wsdl:message>
+  <wsdl:message name="PPaySoapOut">
+    <wsdl:part name="parameters" element="tns:PPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="PPayAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryCloseTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:QryCloseTime" />
+  </wsdl:message>
+  <wsdl:message name="QryCloseTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:QryCloseTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryDrawDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:QryDrawDetail" />
+  </wsdl:message>
+  <wsdl:message name="QryDrawDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:QryDrawDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryDrawDetailAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryNumLimSoapIn">
+    <wsdl:part name="parameters" element="tns:QryNumLim" />
+  </wsdl:message>
+  <wsdl:message name="QryNumLimSoapOut">
+    <wsdl:part name="parameters" element="tns:QryNumLimResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryNumLimAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryUsrOSDetSoapIn">
+    <wsdl:part name="parameters" element="tns:QryUsrOSDet" />
+  </wsdl:message>
+  <wsdl:message name="QryUsrOSDetSoapOut">
+    <wsdl:part name="parameters" element="tns:QryUsrOSDetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryUsrOSDetAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryBRateSoapIn">
+    <wsdl:part name="parameters" element="tns:QryBRate" />
+  </wsdl:message>
+  <wsdl:message name="QryBRateSoapOut">
+    <wsdl:part name="parameters" element="tns:QryBRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryBRateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryAnnounceSoapIn">
+    <wsdl:part name="parameters" element="tns:QryAnnounce" />
+  </wsdl:message>
+  <wsdl:message name="QryAnnounceSoapOut">
+    <wsdl:part name="parameters" element="tns:QryAnnounceResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryAnnounceAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryPPCSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QryPPCSet" />
+  </wsdl:message>
+  <wsdl:message name="QryPPCSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QryPPCSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryPPCSetAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddDeptSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDept" />
+  </wsdl:message>
+  <wsdl:message name="AddDeptSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDeptAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SavePPCSetSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePPCSet" />
+  </wsdl:message>
+  <wsdl:message name="SavePPCSetSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePPCSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePPCSetAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SaveProParamSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveProParam" />
+  </wsdl:message>
+  <wsdl:message name="SaveProParamSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveProParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveProParamAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetHFSysSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHFSys" />
+  </wsdl:message>
+  <wsdl:message name="GetHFSysSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHFSysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHFSysAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SaveRes4DSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveRes4D" />
+  </wsdl:message>
+  <wsdl:message name="SaveRes4DSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveRes4DResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRes4DAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryBetLstByUsr4DSoapIn">
+    <wsdl:part name="parameters" element="tns:QryBetLstByUsr4D" />
+  </wsdl:message>
+  <wsdl:message name="QryBetLstByUsr4DSoapOut">
+    <wsdl:part name="parameters" element="tns:QryBetLstByUsr4DResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryBetLstByUsr4DAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryMpleTrRep4DSoapIn">
+    <wsdl:part name="parameters" element="tns:QryMpleTrRep4D" />
+  </wsdl:message>
+  <wsdl:message name="QryMpleTrRep4DSoapOut">
+    <wsdl:part name="parameters" element="tns:QryMpleTrRep4DResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryMpleTrRep4DAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QrySTrByUsr4DSoapIn">
+    <wsdl:part name="parameters" element="tns:QrySTrByUsr4D" />
+  </wsdl:message>
+  <wsdl:message name="QrySTrByUsr4DSoapOut">
+    <wsdl:part name="parameters" element="tns:QrySTrByUsr4DResponse" />
+  </wsdl:message>
+  <wsdl:message name="QrySTrByUsr4DAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ProFTr4DSoapIn">
+    <wsdl:part name="parameters" element="tns:ProFTr4D" />
+  </wsdl:message>
+  <wsdl:message name="ProFTr4DSoapOut">
+    <wsdl:part name="parameters" element="tns:ProFTr4DResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProFTr4DAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AdjCLimSoapIn">
+    <wsdl:part name="parameters" element="tns:AdjCLim" />
+  </wsdl:message>
+  <wsdl:message name="AdjCLimSoapOut">
+    <wsdl:part name="parameters" element="tns:AdjCLimResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdjCLimAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="Save4DBLimRSoapIn">
+    <wsdl:part name="parameters" element="tns:Save4DBLimR" />
+  </wsdl:message>
+  <wsdl:message name="Save4DBLimRSoapOut">
+    <wsdl:part name="parameters" element="tns:Save4DBLimRResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save4DBLimRAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SaveStyleSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveStyle" />
+  </wsdl:message>
+  <wsdl:message name="SaveStyleSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveStyleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveStyleAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpFightSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UpFightSet" />
+  </wsdl:message>
+  <wsdl:message name="UpFightSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UpFightSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpFightSetAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryFightSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QryFightSet" />
+  </wsdl:message>
+  <wsdl:message name="QryFightSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QryFightSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryFightSetAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SaveActPO4DSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveActPO4D" />
+  </wsdl:message>
+  <wsdl:message name="SaveActPO4DSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveActPO4DResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveActPO4DAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ProD4DSoapIn">
+    <wsdl:part name="parameters" element="tns:ProD4D" />
+  </wsdl:message>
+  <wsdl:message name="ProD4DSoapOut">
+    <wsdl:part name="parameters" element="tns:ProD4DResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProD4DAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryRunnerSoapIn">
+    <wsdl:part name="parameters" element="tns:QryRunner" />
+  </wsdl:message>
+  <wsdl:message name="QryRunnerSoapOut">
+    <wsdl:part name="parameters" element="tns:QryRunnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryRunnerAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="PInvSoapIn">
+    <wsdl:part name="parameters" element="tns:PInv" />
+  </wsdl:message>
+  <wsdl:message name="PInvSoapOut">
+    <wsdl:part name="parameters" element="tns:PInvResponse" />
+  </wsdl:message>
+  <wsdl:message name="PInvAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryAdInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:QryAdInfo" />
+  </wsdl:message>
+  <wsdl:message name="QryAdInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:QryAdInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryAdInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryAdInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:QryAdInfoById" />
+  </wsdl:message>
+  <wsdl:message name="QryAdInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:QryAdInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryAdInfoByIdAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SaveAdInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveAdInfo" />
+  </wsdl:message>
+  <wsdl:message name="SaveAdInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveAdInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAdInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpAdInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpAdInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpAdInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpAdInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpAdInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlSoapIn">
+    <wsdl:part name="parameters" element="tns:QryMACommLvl" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlSoapOut">
+    <wsdl:part name="parameters" element="tns:QryMACommLvlResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlAgtSoapIn">
+    <wsdl:part name="parameters" element="tns:QryMACommLvlAgt" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlAgtSoapOut">
+    <wsdl:part name="parameters" element="tns:QryMACommLvlAgtResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlAgtAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlMASoapIn">
+    <wsdl:part name="parameters" element="tns:QryMACommLvlMA" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlMASoapOut">
+    <wsdl:part name="parameters" element="tns:QryMACommLvlMAResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryMACommLvlMAAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpMACommLvlSoapIn">
+    <wsdl:part name="parameters" element="tns:UpMACommLvl" />
+  </wsdl:message>
+  <wsdl:message name="UpMACommLvlSoapOut">
+    <wsdl:part name="parameters" element="tns:UpMACommLvlResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpMACommLvlAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlSoapIn">
+    <wsdl:part name="parameters" element="tns:QryAgtCommLvl" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlSoapOut">
+    <wsdl:part name="parameters" element="tns:QryAgtCommLvlResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlAgtSoapIn">
+    <wsdl:part name="parameters" element="tns:QryAgtCommLvlAgt" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlAgtSoapOut">
+    <wsdl:part name="parameters" element="tns:QryAgtCommLvlAgtResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlAgtAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlRunSoapIn">
+    <wsdl:part name="parameters" element="tns:QryAgtCommLvlRun" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlRunSoapOut">
+    <wsdl:part name="parameters" element="tns:QryAgtCommLvlRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryAgtCommLvlRunAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpAgtCommLvlSoapIn">
+    <wsdl:part name="parameters" element="tns:UpAgtCommLvl" />
+  </wsdl:message>
+  <wsdl:message name="UpAgtCommLvlSoapOut">
+    <wsdl:part name="parameters" element="tns:UpAgtCommLvlResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpAgtCommLvlAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlSoapIn">
+    <wsdl:part name="parameters" element="tns:QryRunCommLvl" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlSoapOut">
+    <wsdl:part name="parameters" element="tns:QryRunCommLvlResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlRunSoapIn">
+    <wsdl:part name="parameters" element="tns:QryRunCommLvlRun" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlRunSoapOut">
+    <wsdl:part name="parameters" element="tns:QryRunCommLvlRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlRunAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:QryRunCommLvlPlayer" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:QryRunCommLvlPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryRunCommLvlPlayerAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpRunCommLvlSoapIn">
+    <wsdl:part name="parameters" element="tns:UpRunCommLvl" />
+  </wsdl:message>
+  <wsdl:message name="UpRunCommLvlSoapOut">
+    <wsdl:part name="parameters" element="tns:UpRunCommLvlResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpRunCommLvlAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddChequeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCheque" />
+  </wsdl:message>
+  <wsdl:message name="AddChequeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddChequeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddChequeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QRpChAdSoapIn">
+    <wsdl:part name="parameters" element="tns:QRpChAd" />
+  </wsdl:message>
+  <wsdl:message name="QRpChAdSoapOut">
+    <wsdl:part name="parameters" element="tns:QRpChAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QRpChAdAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QRpChBankSoapIn">
+    <wsdl:part name="parameters" element="tns:QRpChBank" />
+  </wsdl:message>
+  <wsdl:message name="QRpChBankSoapOut">
+    <wsdl:part name="parameters" element="tns:QRpChBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="QRpChBankAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QRpChAllSoapIn">
+    <wsdl:part name="parameters" element="tns:QRpChAll" />
+  </wsdl:message>
+  <wsdl:message name="QRpChAllSoapOut">
+    <wsdl:part name="parameters" element="tns:QRpChAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="QRpChAllAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QCrDrSoapIn">
+    <wsdl:part name="parameters" element="tns:QCrDr" />
+  </wsdl:message>
+  <wsdl:message name="QCrDrSoapOut">
+    <wsdl:part name="parameters" element="tns:QCrDrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QCrDrAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QCrDrHistSoapIn">
+    <wsdl:part name="parameters" element="tns:QCrDrHist" />
+  </wsdl:message>
+  <wsdl:message name="QCrDrHistSoapOut">
+    <wsdl:part name="parameters" element="tns:QCrDrHistResponse" />
+  </wsdl:message>
+  <wsdl:message name="QCrDrHistAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="TransCrDrSoapIn">
+    <wsdl:part name="parameters" element="tns:TransCrDr" />
+  </wsdl:message>
+  <wsdl:message name="TransCrDrSoapOut">
+    <wsdl:part name="parameters" element="tns:TransCrDrResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransCrDrAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QPNLSysSoapIn">
+    <wsdl:part name="parameters" element="tns:QPNLSys" />
+  </wsdl:message>
+  <wsdl:message name="QPNLSysSoapOut">
+    <wsdl:part name="parameters" element="tns:QPNLSysResponse" />
+  </wsdl:message>
+  <wsdl:message name="QPNLSysAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="QPOHistSoapIn">
+    <wsdl:part name="parameters" element="tns:QPOHist" />
+  </wsdl:message>
+  <wsdl:message name="QPOHistSoapOut">
+    <wsdl:part name="parameters" element="tns:QPOHistResponse" />
+  </wsdl:message>
+  <wsdl:message name="QPOHistAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SmartFDAdSoapIn">
+    <wsdl:part name="parameters" element="tns:SmartFDAd" />
+  </wsdl:message>
+  <wsdl:message name="SmartFDAdSoapOut">
+    <wsdl:part name="parameters" element="tns:SmartFDAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ETLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:ETLogin" />
+  </wsdl:message>
+  <wsdl:message name="ETLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:ETLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ETLoginNoEncSoapIn">
+    <wsdl:part name="parameters" element="tns:ETLoginNoEnc" />
+  </wsdl:message>
+  <wsdl:message name="ETLoginNoEncSoapOut">
+    <wsdl:part name="parameters" element="tns:ETLoginNoEncResponse" />
+  </wsdl:message>
+  <wsdl:message name="PInvETransSoapIn">
+    <wsdl:part name="parameters" element="tns:PInvETrans" />
+  </wsdl:message>
+  <wsdl:message name="PInvETransSoapOut">
+    <wsdl:part name="parameters" element="tns:PInvETransResponse" />
+  </wsdl:message>
+  <wsdl:message name="PInvETSoapIn">
+    <wsdl:part name="parameters" element="tns:PInvET" />
+  </wsdl:message>
+  <wsdl:message name="PInvETSoapOut">
+    <wsdl:part name="parameters" element="tns:PInvETResponse" />
+  </wsdl:message>
+  <wsdl:message name="PInsETSoapIn">
+    <wsdl:part name="parameters" element="tns:PInsET" />
+  </wsdl:message>
+  <wsdl:message name="PInsETSoapOut">
+    <wsdl:part name="parameters" element="tns:PInsETResponse" />
+  </wsdl:message>
+  <wsdl:message name="DrawReultSoapIn">
+    <wsdl:part name="parameters" element="tns:DrawReult" />
+  </wsdl:message>
+  <wsdl:message name="DrawReultSoapOut">
+    <wsdl:part name="parameters" element="tns:DrawReultResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotNumSoapIn">
+    <wsdl:part name="parameters" element="tns:HotNum" />
+  </wsdl:message>
+  <wsdl:message name="HotNumSoapOut">
+    <wsdl:part name="parameters" element="tns:HotNumResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PdaWebSrvSoap">
+    <wsdl:operation name="ErrorMessage">
+      <wsdl:input message="tns:ErrorMessageSoapIn" />
+      <wsdl:output message="tns:ErrorMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCloseTime">
+      <wsdl:input message="tns:GetCloseTimeSoapIn" />
+      <wsdl:output message="tns:GetCloseTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="New4DPlaceIn">
+      <wsdl:input message="tns:New4DPlaceInSoapIn" />
+      <wsdl:output message="tns:New4DPlaceInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SmartFD">
+      <wsdl:input message="tns:SmartFDSoapIn" />
+      <wsdl:output message="tns:SmartFDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SMSFD">
+      <wsdl:input message="tns:SMSFDSoapIn" />
+      <wsdl:output message="tns:SMSFDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SMSMe">
+      <wsdl:input message="tns:SMSMeSoapIn" />
+      <wsdl:output message="tns:SMSMeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCon">
+      <wsdl:input message="tns:CheckConSoapIn" />
+      <wsdl:output message="tns:CheckConSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSP">
+      <wsdl:input message="tns:ExecuteSPSoapIn" />
+      <wsdl:output message="tns:ExecuteSPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSP_Ret">
+      <wsdl:input message="tns:ExecuteSP_RetSoapIn" />
+      <wsdl:output message="tns:ExecuteSP_RetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol">
+      <wsdl:input message="tns:ExecuteSPColSoapIn" />
+      <wsdl:output message="tns:ExecuteSPColSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol_Ret">
+      <wsdl:input message="tns:ExecuteSPCol_RetSoapIn" />
+      <wsdl:output message="tns:ExecuteSPCol_RetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecSPWithRS">
+      <wsdl:input message="tns:ExecSPWithRSSoapIn" />
+      <wsdl:output message="tns:ExecSPWithRSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol_RS">
+      <wsdl:input message="tns:ExecuteSPCol_RSSoapIn" />
+      <wsdl:output message="tns:ExecuteSPCol_RSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaceInvest">
+      <wsdl:input message="tns:PlaceInvestSoapIn" />
+      <wsdl:output message="tns:PlaceInvestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaceBuf">
+      <wsdl:input message="tns:PlaceBufSoapIn" />
+      <wsdl:output message="tns:PlaceBufSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PPay">
+      <wsdl:input message="tns:PPaySoapIn" />
+      <wsdl:output message="tns:PPaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input message="tns:AddUserSoapIn" />
+      <wsdl:output message="tns:AddUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input message="tns:UpdateUserSoapIn" />
+      <wsdl:output message="tns:UpdateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryCloseTime">
+      <wsdl:input message="tns:QryCloseTimeSoapIn" />
+      <wsdl:output message="tns:QryCloseTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryDrawDetail">
+      <wsdl:input message="tns:QryDrawDetailSoapIn" />
+      <wsdl:output message="tns:QryDrawDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryNumLim">
+      <wsdl:input message="tns:QryNumLimSoapIn" />
+      <wsdl:output message="tns:QryNumLimSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryUsrOSDet">
+      <wsdl:input message="tns:QryUsrOSDetSoapIn" />
+      <wsdl:output message="tns:QryUsrOSDetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryBRate">
+      <wsdl:input message="tns:QryBRateSoapIn" />
+      <wsdl:output message="tns:QryBRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryAnnounce">
+      <wsdl:input message="tns:QryAnnounceSoapIn" />
+      <wsdl:output message="tns:QryAnnounceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryPPCSet">
+      <wsdl:input message="tns:QryPPCSetSoapIn" />
+      <wsdl:output message="tns:QryPPCSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDept">
+      <wsdl:input message="tns:AddDeptSoapIn" />
+      <wsdl:output message="tns:AddDeptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePPCSet">
+      <wsdl:input message="tns:SavePPCSetSoapIn" />
+      <wsdl:output message="tns:SavePPCSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProParam">
+      <wsdl:input message="tns:SaveProParamSoapIn" />
+      <wsdl:output message="tns:SaveProParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHFSys">
+      <wsdl:input message="tns:GetHFSysSoapIn" />
+      <wsdl:output message="tns:GetHFSysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRes4D">
+      <wsdl:input message="tns:SaveRes4DSoapIn" />
+      <wsdl:output message="tns:SaveRes4DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryBetLstByUsr4D">
+      <wsdl:input message="tns:QryBetLstByUsr4DSoapIn" />
+      <wsdl:output message="tns:QryBetLstByUsr4DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryMpleTrRep4D">
+      <wsdl:input message="tns:QryMpleTrRep4DSoapIn" />
+      <wsdl:output message="tns:QryMpleTrRep4DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QrySTrByUsr4D">
+      <wsdl:input message="tns:QrySTrByUsr4DSoapIn" />
+      <wsdl:output message="tns:QrySTrByUsr4DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProFTr4D">
+      <wsdl:input message="tns:ProFTr4DSoapIn" />
+      <wsdl:output message="tns:ProFTr4DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdjCLim">
+      <wsdl:input message="tns:AdjCLimSoapIn" />
+      <wsdl:output message="tns:AdjCLimSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save4DBLimR">
+      <wsdl:input message="tns:Save4DBLimRSoapIn" />
+      <wsdl:output message="tns:Save4DBLimRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStyle">
+      <wsdl:input message="tns:SaveStyleSoapIn" />
+      <wsdl:output message="tns:SaveStyleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpFightSet">
+      <wsdl:input message="tns:UpFightSetSoapIn" />
+      <wsdl:output message="tns:UpFightSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryFightSet">
+      <wsdl:input message="tns:QryFightSetSoapIn" />
+      <wsdl:output message="tns:QryFightSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveActPO4D">
+      <wsdl:input message="tns:SaveActPO4DSoapIn" />
+      <wsdl:output message="tns:SaveActPO4DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProD4D">
+      <wsdl:input message="tns:ProD4DSoapIn" />
+      <wsdl:output message="tns:ProD4DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryRunner">
+      <wsdl:input message="tns:QryRunnerSoapIn" />
+      <wsdl:output message="tns:QryRunnerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PInv">
+      <wsdl:input message="tns:PInvSoapIn" />
+      <wsdl:output message="tns:PInvSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryAdInfo">
+      <wsdl:input message="tns:QryAdInfoSoapIn" />
+      <wsdl:output message="tns:QryAdInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryAdInfoById">
+      <wsdl:input message="tns:QryAdInfoByIdSoapIn" />
+      <wsdl:output message="tns:QryAdInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdInfo">
+      <wsdl:input message="tns:SaveAdInfoSoapIn" />
+      <wsdl:output message="tns:SaveAdInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpAdInfo">
+      <wsdl:input message="tns:UpAdInfoSoapIn" />
+      <wsdl:output message="tns:UpAdInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvl">
+      <wsdl:input message="tns:QryMACommLvlSoapIn" />
+      <wsdl:output message="tns:QryMACommLvlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvlAgt">
+      <wsdl:input message="tns:QryMACommLvlAgtSoapIn" />
+      <wsdl:output message="tns:QryMACommLvlAgtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvlMA">
+      <wsdl:input message="tns:QryMACommLvlMASoapIn" />
+      <wsdl:output message="tns:QryMACommLvlMASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpMACommLvl">
+      <wsdl:input message="tns:UpMACommLvlSoapIn" />
+      <wsdl:output message="tns:UpMACommLvlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvl">
+      <wsdl:input message="tns:QryAgtCommLvlSoapIn" />
+      <wsdl:output message="tns:QryAgtCommLvlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvlAgt">
+      <wsdl:input message="tns:QryAgtCommLvlAgtSoapIn" />
+      <wsdl:output message="tns:QryAgtCommLvlAgtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvlRun">
+      <wsdl:input message="tns:QryAgtCommLvlRunSoapIn" />
+      <wsdl:output message="tns:QryAgtCommLvlRunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpAgtCommLvl">
+      <wsdl:input message="tns:UpAgtCommLvlSoapIn" />
+      <wsdl:output message="tns:UpAgtCommLvlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvl">
+      <wsdl:input message="tns:QryRunCommLvlSoapIn" />
+      <wsdl:output message="tns:QryRunCommLvlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvlRun">
+      <wsdl:input message="tns:QryRunCommLvlRunSoapIn" />
+      <wsdl:output message="tns:QryRunCommLvlRunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvlPlayer">
+      <wsdl:input message="tns:QryRunCommLvlPlayerSoapIn" />
+      <wsdl:output message="tns:QryRunCommLvlPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpRunCommLvl">
+      <wsdl:input message="tns:UpRunCommLvlSoapIn" />
+      <wsdl:output message="tns:UpRunCommLvlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCheque">
+      <wsdl:input message="tns:AddChequeSoapIn" />
+      <wsdl:output message="tns:AddChequeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QRpChAd">
+      <wsdl:input message="tns:QRpChAdSoapIn" />
+      <wsdl:output message="tns:QRpChAdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QRpChBank">
+      <wsdl:input message="tns:QRpChBankSoapIn" />
+      <wsdl:output message="tns:QRpChBankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QRpChAll">
+      <wsdl:input message="tns:QRpChAllSoapIn" />
+      <wsdl:output message="tns:QRpChAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QCrDr">
+      <wsdl:input message="tns:QCrDrSoapIn" />
+      <wsdl:output message="tns:QCrDrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QCrDrHist">
+      <wsdl:input message="tns:QCrDrHistSoapIn" />
+      <wsdl:output message="tns:QCrDrHistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransCrDr">
+      <wsdl:input message="tns:TransCrDrSoapIn" />
+      <wsdl:output message="tns:TransCrDrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QPNLSys">
+      <wsdl:input message="tns:QPNLSysSoapIn" />
+      <wsdl:output message="tns:QPNLSysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QPOHist">
+      <wsdl:input message="tns:QPOHistSoapIn" />
+      <wsdl:output message="tns:QPOHistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SmartFDAd">
+      <wsdl:input message="tns:SmartFDAdSoapIn" />
+      <wsdl:output message="tns:SmartFDAdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ETLogin">
+      <wsdl:input message="tns:ETLoginSoapIn" />
+      <wsdl:output message="tns:ETLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ETLoginNoEnc">
+      <wsdl:input message="tns:ETLoginNoEncSoapIn" />
+      <wsdl:output message="tns:ETLoginNoEncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PInvETrans">
+      <wsdl:input message="tns:PInvETransSoapIn" />
+      <wsdl:output message="tns:PInvETransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PInvET">
+      <wsdl:input message="tns:PInvETSoapIn" />
+      <wsdl:output message="tns:PInvETSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PInsET">
+      <wsdl:input message="tns:PInsETSoapIn" />
+      <wsdl:output message="tns:PInsETSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DrawReult">
+      <wsdl:input message="tns:DrawReultSoapIn" />
+      <wsdl:output message="tns:DrawReultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HotNum">
+      <wsdl:input message="tns:HotNumSoapIn" />
+      <wsdl:output message="tns:HotNumSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PdaWebSrvSoap" type="tns:PdaWebSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ErrorMessage">
+      <soap:operation soapAction="http://www.4dmy.net/ErrorMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCloseTime">
+      <soap:operation soapAction="http://www.4dmy.net/GetCloseTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New4DPlaceIn">
+      <soap:operation soapAction="http://www.4dmy.net/New4DPlaceIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmartFD">
+      <soap:operation soapAction="http://www.4dmy.net/SmartFD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSFD">
+      <soap:operation soapAction="http://www.4dmy.net/SMSFD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSMe">
+      <soap:operation soapAction="http://www.4dmy.net/SMSMe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCon">
+      <soap:operation soapAction="http://www.4dmy.net/CheckCon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckConAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSP">
+      <soap:operation soapAction="http://www.4dmy.net/ExecuteSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExecuteSPAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSP_Ret">
+      <soap:operation soapAction="http://www.4dmy.net/ExecuteSP_Ret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExecuteSP_RetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol">
+      <soap:operation soapAction="http://www.4dmy.net/ExecuteSPCol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExecuteSPColAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol_Ret">
+      <soap:operation soapAction="http://www.4dmy.net/ExecuteSPCol_Ret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExecuteSPCol_RetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecSPWithRS">
+      <soap:operation soapAction="http://www.4dmy.net/ExecSPWithRS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExecSPWithRSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol_RS">
+      <soap:operation soapAction="http://www.4dmy.net/ExecuteSPCol_RS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExecuteSPCol_RSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceInvest">
+      <soap:operation soapAction="http://www.4dmy.net/PlaceInvest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PlaceInvestAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceBuf">
+      <soap:operation soapAction="http://www.4dmy.net/PlaceBuf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PlaceBufAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PPay">
+      <soap:operation soapAction="http://www.4dmy.net/PPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PPayAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://www.4dmy.net/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddUserAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://www.4dmy.net/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateUserAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryCloseTime">
+      <soap:operation soapAction="http://www.4dmy.net/QryCloseTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryDrawDetail">
+      <soap:operation soapAction="http://www.4dmy.net/QryDrawDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryDrawDetailAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryNumLim">
+      <soap:operation soapAction="http://www.4dmy.net/QryNumLim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryNumLimAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryUsrOSDet">
+      <soap:operation soapAction="http://www.4dmy.net/QryUsrOSDet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryUsrOSDetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryBRate">
+      <soap:operation soapAction="http://www.4dmy.net/QryBRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryBRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAnnounce">
+      <soap:operation soapAction="http://www.4dmy.net/QryAnnounce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryAnnounceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryPPCSet">
+      <soap:operation soapAction="http://www.4dmy.net/QryPPCSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryPPCSetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDept">
+      <soap:operation soapAction="http://www.4dmy.net/AddDept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddDeptAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePPCSet">
+      <soap:operation soapAction="http://www.4dmy.net/SavePPCSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SavePPCSetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProParam">
+      <soap:operation soapAction="http://www.4dmy.net/SaveProParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveProParamAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHFSys">
+      <soap:operation soapAction="http://www.4dmy.net/GetHFSys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetHFSysAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRes4D">
+      <soap:operation soapAction="http://www.4dmy.net/SaveRes4D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveRes4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryBetLstByUsr4D">
+      <soap:operation soapAction="http://www.4dmy.net/QryBetLstByUsr4D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryBetLstByUsr4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryMpleTrRep4D">
+      <soap:operation soapAction="http://www.4dmy.net/QryMpleTrRep4D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryMpleTrRep4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QrySTrByUsr4D">
+      <soap:operation soapAction="http://www.4dmy.net/QrySTrByUsr4D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QrySTrByUsr4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProFTr4D">
+      <soap:operation soapAction="http://www.4dmy.net/ProFTr4D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ProFTr4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjCLim">
+      <soap:operation soapAction="http://www.4dmy.net/AdjCLim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AdjCLimAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save4DBLimR">
+      <soap:operation soapAction="http://www.4dmy.net/Save4DBLimR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Save4DBLimRAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStyle">
+      <soap:operation soapAction="http://www.4dmy.net/SaveStyle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveStyleAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpFightSet">
+      <soap:operation soapAction="http://www.4dmy.net/UpFightSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpFightSetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFightSet">
+      <soap:operation soapAction="http://www.4dmy.net/QryFightSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryFightSetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveActPO4D">
+      <soap:operation soapAction="http://www.4dmy.net/SaveActPO4D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveActPO4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProD4D">
+      <soap:operation soapAction="http://www.4dmy.net/ProD4D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ProD4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryRunner">
+      <soap:operation soapAction="http://www.4dmy.net/QryRunner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryRunnerAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PInv">
+      <soap:operation soapAction="http://www.4dmy.net/PInv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PInvAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAdInfo">
+      <soap:operation soapAction="http://www.4dmy.net/QryAdInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryAdInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAdInfoById">
+      <soap:operation soapAction="http://www.4dmy.net/QryAdInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryAdInfoByIdAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdInfo">
+      <soap:operation soapAction="http://www.4dmy.net/SaveAdInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveAdInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpAdInfo">
+      <soap:operation soapAction="http://www.4dmy.net/UpAdInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpAdInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvl">
+      <soap:operation soapAction="http://www.4dmy.net/QryMACommLvl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryMACommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvlAgt">
+      <soap:operation soapAction="http://www.4dmy.net/QryMACommLvlAgt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryMACommLvlAgtAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvlMA">
+      <soap:operation soapAction="http://www.4dmy.net/QryMACommLvlMA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryMACommLvlMAAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpMACommLvl">
+      <soap:operation soapAction="http://www.4dmy.net/UpMACommLvl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpMACommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvl">
+      <soap:operation soapAction="http://www.4dmy.net/QryAgtCommLvl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryAgtCommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvlAgt">
+      <soap:operation soapAction="http://www.4dmy.net/QryAgtCommLvlAgt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryAgtCommLvlAgtAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvlRun">
+      <soap:operation soapAction="http://www.4dmy.net/QryAgtCommLvlRun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryAgtCommLvlRunAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpAgtCommLvl">
+      <soap:operation soapAction="http://www.4dmy.net/UpAgtCommLvl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpAgtCommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvl">
+      <soap:operation soapAction="http://www.4dmy.net/QryRunCommLvl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryRunCommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvlRun">
+      <soap:operation soapAction="http://www.4dmy.net/QryRunCommLvlRun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryRunCommLvlRunAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvlPlayer">
+      <soap:operation soapAction="http://www.4dmy.net/QryRunCommLvlPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QryRunCommLvlPlayerAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpRunCommLvl">
+      <soap:operation soapAction="http://www.4dmy.net/UpRunCommLvl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpRunCommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCheque">
+      <soap:operation soapAction="http://www.4dmy.net/AddCheque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddChequeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QRpChAd">
+      <soap:operation soapAction="http://www.4dmy.net/QRpChAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QRpChAdAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QRpChBank">
+      <soap:operation soapAction="http://www.4dmy.net/QRpChBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QRpChBankAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QRpChAll">
+      <soap:operation soapAction="http://www.4dmy.net/QRpChAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QRpChAllAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QCrDr">
+      <soap:operation soapAction="http://www.4dmy.net/QCrDr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QCrDrAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QCrDrHist">
+      <soap:operation soapAction="http://www.4dmy.net/QCrDrHist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QCrDrHistAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransCrDr">
+      <soap:operation soapAction="http://www.4dmy.net/TransCrDr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TransCrDrAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QPNLSys">
+      <soap:operation soapAction="http://www.4dmy.net/QPNLSys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QPNLSysAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QPOHist">
+      <soap:operation soapAction="http://www.4dmy.net/QPOHist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QPOHistAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmartFDAd">
+      <soap:operation soapAction="http://www.4dmy.net/SmartFDAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETLogin">
+      <soap:operation soapAction="http://www.4dmy.net/ETLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETLoginNoEnc">
+      <soap:operation soapAction="http://www.4dmy.net/ETLoginNoEnc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PInvETrans">
+      <soap:operation soapAction="http://www.4dmy.net/PInvETrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PInvET">
+      <soap:operation soapAction="http://www.4dmy.net/PInvET" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PInsET">
+      <soap:operation soapAction="http://www.4dmy.net/PInsET" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DrawReult">
+      <soap:operation soapAction="http://www.4dmy.net/DrawReult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HotNum">
+      <soap:operation soapAction="http://www.4dmy.net/HotNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PdaWebSrvSoap12" type="tns:PdaWebSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ErrorMessage">
+      <soap12:operation soapAction="http://www.4dmy.net/ErrorMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCloseTime">
+      <soap12:operation soapAction="http://www.4dmy.net/GetCloseTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="New4DPlaceIn">
+      <soap12:operation soapAction="http://www.4dmy.net/New4DPlaceIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmartFD">
+      <soap12:operation soapAction="http://www.4dmy.net/SmartFD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSFD">
+      <soap12:operation soapAction="http://www.4dmy.net/SMSFD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSMe">
+      <soap12:operation soapAction="http://www.4dmy.net/SMSMe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCon">
+      <soap12:operation soapAction="http://www.4dmy.net/CheckCon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckConAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSP">
+      <soap12:operation soapAction="http://www.4dmy.net/ExecuteSP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExecuteSPAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSP_Ret">
+      <soap12:operation soapAction="http://www.4dmy.net/ExecuteSP_Ret" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExecuteSP_RetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol">
+      <soap12:operation soapAction="http://www.4dmy.net/ExecuteSPCol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExecuteSPColAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol_Ret">
+      <soap12:operation soapAction="http://www.4dmy.net/ExecuteSPCol_Ret" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExecuteSPCol_RetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecSPWithRS">
+      <soap12:operation soapAction="http://www.4dmy.net/ExecSPWithRS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExecSPWithRSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSPCol_RS">
+      <soap12:operation soapAction="http://www.4dmy.net/ExecuteSPCol_RS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExecuteSPCol_RSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceInvest">
+      <soap12:operation soapAction="http://www.4dmy.net/PlaceInvest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PlaceInvestAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceBuf">
+      <soap12:operation soapAction="http://www.4dmy.net/PlaceBuf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PlaceBufAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PPay">
+      <soap12:operation soapAction="http://www.4dmy.net/PPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PPayAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap12:operation soapAction="http://www.4dmy.net/AddUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddUserAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap12:operation soapAction="http://www.4dmy.net/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateUserAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryCloseTime">
+      <soap12:operation soapAction="http://www.4dmy.net/QryCloseTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryDrawDetail">
+      <soap12:operation soapAction="http://www.4dmy.net/QryDrawDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryDrawDetailAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryNumLim">
+      <soap12:operation soapAction="http://www.4dmy.net/QryNumLim" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryNumLimAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryUsrOSDet">
+      <soap12:operation soapAction="http://www.4dmy.net/QryUsrOSDet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryUsrOSDetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryBRate">
+      <soap12:operation soapAction="http://www.4dmy.net/QryBRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryBRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAnnounce">
+      <soap12:operation soapAction="http://www.4dmy.net/QryAnnounce" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryAnnounceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryPPCSet">
+      <soap12:operation soapAction="http://www.4dmy.net/QryPPCSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryPPCSetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDept">
+      <soap12:operation soapAction="http://www.4dmy.net/AddDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddDeptAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePPCSet">
+      <soap12:operation soapAction="http://www.4dmy.net/SavePPCSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SavePPCSetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProParam">
+      <soap12:operation soapAction="http://www.4dmy.net/SaveProParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveProParamAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHFSys">
+      <soap12:operation soapAction="http://www.4dmy.net/GetHFSys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetHFSysAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRes4D">
+      <soap12:operation soapAction="http://www.4dmy.net/SaveRes4D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveRes4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryBetLstByUsr4D">
+      <soap12:operation soapAction="http://www.4dmy.net/QryBetLstByUsr4D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryBetLstByUsr4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryMpleTrRep4D">
+      <soap12:operation soapAction="http://www.4dmy.net/QryMpleTrRep4D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryMpleTrRep4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QrySTrByUsr4D">
+      <soap12:operation soapAction="http://www.4dmy.net/QrySTrByUsr4D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QrySTrByUsr4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProFTr4D">
+      <soap12:operation soapAction="http://www.4dmy.net/ProFTr4D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ProFTr4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjCLim">
+      <soap12:operation soapAction="http://www.4dmy.net/AdjCLim" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AdjCLimAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save4DBLimR">
+      <soap12:operation soapAction="http://www.4dmy.net/Save4DBLimR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Save4DBLimRAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStyle">
+      <soap12:operation soapAction="http://www.4dmy.net/SaveStyle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveStyleAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpFightSet">
+      <soap12:operation soapAction="http://www.4dmy.net/UpFightSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpFightSetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFightSet">
+      <soap12:operation soapAction="http://www.4dmy.net/QryFightSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryFightSetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveActPO4D">
+      <soap12:operation soapAction="http://www.4dmy.net/SaveActPO4D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveActPO4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProD4D">
+      <soap12:operation soapAction="http://www.4dmy.net/ProD4D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ProD4DAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryRunner">
+      <soap12:operation soapAction="http://www.4dmy.net/QryRunner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryRunnerAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PInv">
+      <soap12:operation soapAction="http://www.4dmy.net/PInv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PInvAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAdInfo">
+      <soap12:operation soapAction="http://www.4dmy.net/QryAdInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryAdInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAdInfoById">
+      <soap12:operation soapAction="http://www.4dmy.net/QryAdInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryAdInfoByIdAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdInfo">
+      <soap12:operation soapAction="http://www.4dmy.net/SaveAdInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveAdInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpAdInfo">
+      <soap12:operation soapAction="http://www.4dmy.net/UpAdInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpAdInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvl">
+      <soap12:operation soapAction="http://www.4dmy.net/QryMACommLvl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryMACommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvlAgt">
+      <soap12:operation soapAction="http://www.4dmy.net/QryMACommLvlAgt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryMACommLvlAgtAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryMACommLvlMA">
+      <soap12:operation soapAction="http://www.4dmy.net/QryMACommLvlMA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryMACommLvlMAAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpMACommLvl">
+      <soap12:operation soapAction="http://www.4dmy.net/UpMACommLvl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpMACommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvl">
+      <soap12:operation soapAction="http://www.4dmy.net/QryAgtCommLvl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryAgtCommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvlAgt">
+      <soap12:operation soapAction="http://www.4dmy.net/QryAgtCommLvlAgt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryAgtCommLvlAgtAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryAgtCommLvlRun">
+      <soap12:operation soapAction="http://www.4dmy.net/QryAgtCommLvlRun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryAgtCommLvlRunAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpAgtCommLvl">
+      <soap12:operation soapAction="http://www.4dmy.net/UpAgtCommLvl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpAgtCommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvl">
+      <soap12:operation soapAction="http://www.4dmy.net/QryRunCommLvl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryRunCommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvlRun">
+      <soap12:operation soapAction="http://www.4dmy.net/QryRunCommLvlRun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryRunCommLvlRunAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryRunCommLvlPlayer">
+      <soap12:operation soapAction="http://www.4dmy.net/QryRunCommLvlPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QryRunCommLvlPlayerAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpRunCommLvl">
+      <soap12:operation soapAction="http://www.4dmy.net/UpRunCommLvl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpRunCommLvlAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCheque">
+      <soap12:operation soapAction="http://www.4dmy.net/AddCheque" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddChequeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QRpChAd">
+      <soap12:operation soapAction="http://www.4dmy.net/QRpChAd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QRpChAdAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QRpChBank">
+      <soap12:operation soapAction="http://www.4dmy.net/QRpChBank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QRpChBankAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QRpChAll">
+      <soap12:operation soapAction="http://www.4dmy.net/QRpChAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QRpChAllAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QCrDr">
+      <soap12:operation soapAction="http://www.4dmy.net/QCrDr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QCrDrAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QCrDrHist">
+      <soap12:operation soapAction="http://www.4dmy.net/QCrDrHist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QCrDrHistAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransCrDr">
+      <soap12:operation soapAction="http://www.4dmy.net/TransCrDr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TransCrDrAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QPNLSys">
+      <soap12:operation soapAction="http://www.4dmy.net/QPNLSys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QPNLSysAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QPOHist">
+      <soap12:operation soapAction="http://www.4dmy.net/QPOHist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QPOHistAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmartFDAd">
+      <soap12:operation soapAction="http://www.4dmy.net/SmartFDAd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETLogin">
+      <soap12:operation soapAction="http://www.4dmy.net/ETLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETLoginNoEnc">
+      <soap12:operation soapAction="http://www.4dmy.net/ETLoginNoEnc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PInvETrans">
+      <soap12:operation soapAction="http://www.4dmy.net/PInvETrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PInvET">
+      <soap12:operation soapAction="http://www.4dmy.net/PInvET" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PInsET">
+      <soap12:operation soapAction="http://www.4dmy.net/PInsET" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DrawReult">
+      <soap12:operation soapAction="http://www.4dmy.net/DrawReult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HotNum">
+      <soap12:operation soapAction="http://www.4dmy.net/HotNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PdaWebSrv">
+    <wsdl:port name="PdaWebSrvSoap" binding="tns:PdaWebSrvSoap">
+      <soap:address location="http://4dtest1.4dmy.net/PdaWebSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PdaWebSrvSoap12" binding="tns:PdaWebSrvSoap12">
+      <soap12:address location="http://4dtest1.4dmy.net/PdaWebSrv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
